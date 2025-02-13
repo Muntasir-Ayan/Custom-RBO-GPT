@@ -1,0 +1,16 @@
+site_name: RBO Custom GPT on Explore gpts
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - rust
+
+nav:
+  - Overview: index.md
+  - Feature: feature.md
+  - Components: core_component.md
+  - Knowledge: knowledge.md
+  - Actions: action.md
+  

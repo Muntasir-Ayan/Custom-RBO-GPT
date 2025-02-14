@@ -10,7 +10,10 @@ theme:
 nav:
   - Overview: index.md
   - Feature: feature.md
-  - Components: core_component.md
+  # - Components: core_component.md
   - Knowledge: knowledge.md
   - Actions: action.md
+  - Developer Guidelines: developer.md
+
+  # mkdocs serve -a 0.0.0.0:8080
   

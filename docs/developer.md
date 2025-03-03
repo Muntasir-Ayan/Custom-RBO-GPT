@@ -2,47 +2,95 @@
 
 ## Introduction
 
-OpenAI's **Explore GPTs** feature allows users to create customized ChatGPT versions tailored to specific needs. Whether you want a **personal AI assistant**, a **chatbot for customer support**, or a **creative writing companion**, Explore GPTs makes customization easy—**no coding required!** 
+OpenAI's **Explore GPTs** feature allows users to create customized ChatGPT versions tailored to specific needs. Whether you want a **personal AI assistant**, a **chatbot for customer support**, or a **creative writing companion**, Explore GPTs makes customization easy—**no coding required!**
 
 In this guide, we’ll walk you through the **step-by-step** process of building your own GPT.
 
 ---
 
-## Step 1: Accessing the GPT Builder
+## Step 1: Cosmic Fusion Travel API
 
-1. **Go to ChatGPT**: Visit [ChatGPT](https://chat.openai.com/) and log into your OpenAI account.
-2. **Navigate to "Explore GPTs"**: Click on the **"Explore GPTs"** option in the sidebar.
-3. **Click "Create a GPT"**: This will take you to OpenAI’s intuitive GPT builder interface.
+The Cosmic Fusion Travel API allows users to search for properties based on location, price, and other filters. You can retrieve property details, check availability, and filter properties based on specific criteria such as amenities, price range, and dates.
+
+1. **API Version**:
+   - Version: 1.1.0
+2. **Base URL**:
+   - https://api.cosmicfusion.travelai.com
+3. **Authentication**: This API requires an API key for authentication. The key should be passed in the request header as `x-api-key`.
 
 ---
 
-## Step 2: Setting Up Your Custom GPT
+### Endpoints
 
-### 1. Define the GPT’s Purpose
+#### 1. Search Properties
 
-Before customizing, decide what role your GPT will serve. Examples:
+    GET /v1/property/search
 
-- A **coding assistant** for Python programming.
-- A **writing coach** for content creation.
-- A **customer support bot** for answering FAQs.
+Search for properties based on a keyword (such as a city name) and apply filters such as price range, property type, and more.
 
-### 2. Set the Instructions
+##### Parameters
 
-OpenAI provides a field where you can define **custom instructions**:
+- keyword (required, string): Search keyword, e.g., city name (e.g., "london").
+- limit (required, integer): Number of results to return (default: 10).
+- amount (optional, string): Price range in the format min-max (e.g., "100-200").
+- startDate (optional, string, date format: YYYY-MM-DD): Check-in date.
+- endDate (optional, string, date format: YYYY-MM-DD): Check-out date.
+- pt (optional, string): Property type ID (from api-parameter-property-type.json).
+- order (optional, string): Sorting order ID (from api-parameter-filter.json).
+- filter (optional, string): Additional filters (e.g., ecoFriendly=1).
+- amenities (optional, string): Amenities IDs (separated by "-"). Example: 1-7-6.
 
-- Outline how your GPT should behave. Example:
+##### Response
 
-  > *You are a friendly and knowledgeable AI that specializes in helping users with productivity tips and time management strategies. Keep responses concise and actionable.*
+- 200 OK: A successful response with a list of properties matching the search criteria.
 
-- Specify what the GPT **should and shouldn’t do**.
+#### 2. Get Property Details
 
-### 3. Customize the Personality and Tone
+    GET /v1/property/details/{propertyId}
 
-- Define whether your GPT should be **formal, casual, humorous, or professional**.
+Fetch detailed information about a specific property.
 
-### 4. Upload Custom Knowledge (Optional)
+##### Parameters
 
-- If you want your GPT to provide **specialized information**, you can upload **documents or data** that it will use to enhance responses.
+- `propertyId` (required, string): The unique property ID from a search response.
+
+##### Response
+
+- **200 OK**: Detailed information about the property including its location, price, amenities, and policies.
+
+#### 3. Search Properties by Title
+
+    GET /v1/property/search/title/{title}
+
+Search for properties by their title (e.g., hotel name).
+
+##### Parameters
+
+- `title` (required, string): The exact property title or name (e.g., "Sheraton").
+- `countryCode` (optional, string): The country code for filtering properties (e.g., "us").
+- `location` (optional, string): A specific location to filter properties (e.g., "Panama").
+
+##### Response
+
+- **200 OK**: A successful response with properties matching the given title and filters.
+
+#### 4. Check Property Availability
+
+    GET /v1/property/availability-check
+
+Check the availability of a property for a given date range.
+
+##### Parameters
+
+- checkInDate (required, string, date format: YYYY-MM-DD): The check-in date.
+- checkOutDate (required, string, date format: YYYY-MM-DD): The check-out date.
+- partnerId (required, string): The partner ID (e.g., 33593320).
+- feed (required, integer): The feed ID (e.g., 11).
+- clientCountryCode (required, string): The country code of the client (e.g., "us").
+
+##### Response
+
+- **200 OK**: Availability details for the specified dates.
 
 ---
 
@@ -66,20 +114,22 @@ OpenAI provides a field where you can define **custom instructions**:
 
 ## Step 4: Publish and Share
 
-###  Save and Publish  
+### Save and Publish
+
 - Once satisfied, click **“Publish”**.
 
-### 🔗 Share with Others  
+### 🔗 Share with Others
+
 - You can share your custom GPT via a **link** or keep it **private** for personal use.
 
 ---
 
 ## Conclusion
 
-Creating a **custom ChatGPT** with OpenAI’s **Explore GPTs** is an exciting way to **personalize AI interactions**. Whether for **personal, business, or creative projects**, a tailored GPT can enhance **productivity and engagement**. Try building one today and **unleash the potential of AI!** 
-
+Creating a **custom ChatGPT** with OpenAI’s **Explore GPTs** is an exciting way to **personalize AI interactions**. Whether for **personal, business, or creative projects**, a tailored GPT can enhance **productivity and engagement**. Try building one today and **unleash the potential of AI!**
 
 ---
+
 <div style="text-align: center; padding: 10px; border: 2px solid #3299a8; border-radius: 10px; box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); margin-bottom:10px; ">
     <b><span style="color: #3299a8;">Thank You</span></b> for being with 
     <a href="https://www.rentbyowner.com" target="_blank"><b>RentByOwner</b></a>.

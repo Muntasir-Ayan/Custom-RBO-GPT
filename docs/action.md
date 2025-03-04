@@ -44,7 +44,7 @@ It displays search results in a **table format**, including the following detail
 ### **Example Table:**
 | Property | Price/Night | Guests | Amenities | Rating |
 |----------|------------|--------|-----------|--------|
-| [Coastal Cabin](https://www.rentbyowner.com/property/coastal-cabin) | $150 | 4 | Beachfront, Hot Tub, Pet-Friendly | 4.9/5 |
+| [Luxurious Hawaiian Villa Oasis](https://www.rentbyowner.com/property/luxurious-hawaiian-villa-oasis/EP-22144528)| $150 | 4 | Beachfront, Hot Tub, Pet-Friendly | 4.9/5 |
 
 ---
 

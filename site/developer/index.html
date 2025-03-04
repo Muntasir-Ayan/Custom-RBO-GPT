@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Developer Guidelines - RBO Custom GPT on Explore gpts</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Developer Guidelines";
+        var mkdocs_page_input_path = "developer.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> RBO Custom GPT on Explore gpts
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Overview</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../feature/">Feature</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../knowledge/">Knowledge</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../action/">Actions</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Developer Guidelines</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-1-cosmic-fusion-travel-api">Step 1: Cosmic Fusion Travel API</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#endpoints">Endpoints</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-search-properties">1. Search Properties</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-get-property-details">2. Get Property Details</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-search-properties-by-title">3. Search Properties by Title</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4-check-property-availability">4. Check Property Availability</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">RBO Custom GPT on Explore gpts</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Developer Guidelines</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="how-to-create-a-custom-chatgpt-on-explore-gpts">How to Create a Custom ChatGPT on Explore GPTs</h1>
+<h2 id="introduction">Introduction</h2>
+<p>OpenAI's <strong>Explore GPTs</strong> feature allows users to create customized ChatGPT versions tailored to specific needs. Whether you want a <strong>personal AI assistant</strong>, a <strong>chatbot for customer support</strong>, or a <strong>creative writing companion</strong>, Explore GPTs makes customization easy—<strong>no coding required!</strong></p>
+<p>In this guide, we’ll walk you through the <strong>step-by-step</strong> process of building your own GPT.</p>
+<hr />
+<h2 id="step-1-cosmic-fusion-travel-api">Step 1: Cosmic Fusion Travel API</h2>
+<p>The Cosmic Fusion Travel API allows users to search for properties based on location, price, and other filters. You can retrieve property details, check availability, and filter properties based on specific criteria such as amenities, price range, and dates.</p>
+<ol>
+<li><strong>API Version</strong>:</li>
+<li>Version: 1.1.0</li>
+<li><strong>Base URL</strong>:</li>
+<li>https://api.cosmicfusion.travelai.com</li>
+<li><strong>Authentication</strong>: This API requires an API key for authentication. The key should be passed in the request header as <code>x-api-key</code>.</li>
+</ol>
+<hr />
+<h3 id="endpoints">Endpoints</h3>
+<h4 id="1-search-properties">1. Search Properties</h4>
+<pre><code>GET /v1/property/search
+</code></pre>
+<p>Search for properties based on a keyword (such as a city name) and apply filters such as price range, property type, and more.</p>
+<h5 id="parameters">Parameters</h5>
+<ul>
+<li><code>keyword</code> (required, string): Search keyword, e.g., city name (e.g., "london").</li>
+<li><code>limit</code> (required, integer): Number of results to return (default: 10).</li>
+<li><code>amount</code> (optional, string): Price range in the format min-max (e.g., "100-200").</li>
+<li><code>startDate</code> (optional, string, date format: YYYY-MM-DD): Check-in date.</li>
+<li><code>endDate</code> (optional, string, date format: YYYY-MM-DD): Check-out date.</li>
+<li><code>pt</code> (optional, string): Property type ID (from api-parameter-property-type.json).</li>
+<li><code>order</code> (optional, string): Sorting order ID (from api-parameter-filter.json).</li>
+<li><code>filter</code> (optional, string): Additional filters (e.g., ecoFriendly=1).</li>
+<li><code>amenities</code> (optional, string): Amenities IDs (separated by "-"). Example: 1-7-6.</li>
+</ul>
+<h5 id="response">Response</h5>
+<ul>
+<li>200 OK: A successful response with a list of properties matching the search criteria.</li>
+</ul>
+<h4 id="2-get-property-details">2. Get Property Details</h4>
+<pre><code>GET /v1/property/details/{propertyId}
+</code></pre>
+<p>Fetch detailed information about a specific property.</p>
+<h5 id="parameters_1">Parameters</h5>
+<ul>
+<li><code>propertyId</code> (required, string): The unique property ID from a search response.</li>
+</ul>
+<h5 id="response_1">Response</h5>
+<ul>
+<li><strong>200 OK</strong>: Detailed information about the property including its location, price, amenities, and policies.</li>
+</ul>
+<h4 id="3-search-properties-by-title">3. Search Properties by Title</h4>
+<pre><code>GET /v1/property/search/title/{title}
+</code></pre>
+<p>Search for properties by their title (e.g., hotel name).</p>
+<h5 id="parameters_2">Parameters</h5>
+<ul>
+<li><code>title</code> (required, string): The exact property title or name (e.g., "Sheraton").</li>
+<li><code>countryCode</code> (optional, string): The country code for filtering properties (e.g., "us").</li>
+<li><code>location</code> (optional, string): A specific location to filter properties (e.g., "Panama").</li>
+</ul>
+<h5 id="response_2">Response</h5>
+<ul>
+<li><strong>200 OK</strong>: A successful response with properties matching the given title and filters.</li>
+</ul>
+<h4 id="4-check-property-availability">4. Check Property Availability</h4>
+<pre><code>GET /v1/property/availability-check
+</code></pre>
+<p>Check the availability of a property for a given date range.</p>
+<h5 id="parameters_3">Parameters</h5>
+<ul>
+<li><code>checkInDate</code> (required, string, date format: YYYY-MM-DD): The check-in date.</li>
+<li><code>checkOutDate</code> (required, string, date format: YYYY-MM-DD): The check-out date.</li>
+<li><code>partnerId</code> (required, string): The partner ID (e.g., 33593320).</li>
+<li><code>feed</code> (required, integer): The feed ID (e.g., 11).</li>
+<li><code>clientCountryCode</code> (required, string): The country code of the client (e.g., "us").</li>
+</ul>
+<h5 id="response_3">Response</h5>
+<ul>
+<li><strong>200 OK</strong>: Availability details for the specified dates.</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<p>Creating a <strong>custom ChatGPT</strong> with OpenAI’s <strong>Explore GPTs</strong> is an exciting way to <strong>personalize AI interactions</strong>. Whether for <strong>personal, business, or creative projects</strong>, a tailored GPT can enhance <strong>productivity and engagement</strong>. Try building one today and <strong>unleash the potential of AI!</strong></p>
+<hr />
+<div style="text-align: center; padding: 10px; border: 2px solid #3299a8; border-radius: 10px; box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); margin-bottom:10px; ">
+    <b><span style="color: #3299a8;">Thank You</span></b> for being with 
+    <a href="https://www.rentbyowner.com" target="_blank"><b>RentByOwner</b></a>.
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../action/" class="btn btn-neutral float-left" title="Actions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../action/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

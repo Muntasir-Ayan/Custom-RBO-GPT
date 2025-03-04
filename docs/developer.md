@@ -7,7 +7,7 @@ OpenAI's **Explore GPTs** feature allows users to create customized ChatGPT vers
 In this guide, we’ll walk you through the **step-by-step** process of building your own GPT.
 
 ---
-
+<img src="/asset/RBO-GPT-V1.png" alt="RentByOwner Overflow Diagram">
 ## Step 1: Cosmic Fusion Travel API
 
 The Cosmic Fusion Travel API allows users to search for properties based on location, price, and other filters. You can retrieve property details, check availability, and filter properties based on specific criteria such as amenities, price range, and dates.
@@ -30,15 +30,15 @@ Search for properties based on a keyword (such as a city name) and apply filters
 
 ##### Parameters
 
-- keyword (required, string): Search keyword, e.g., city name (e.g., "london").
-- limit (required, integer): Number of results to return (default: 10).
-- amount (optional, string): Price range in the format min-max (e.g., "100-200").
-- startDate (optional, string, date format: YYYY-MM-DD): Check-in date.
-- endDate (optional, string, date format: YYYY-MM-DD): Check-out date.
-- pt (optional, string): Property type ID (from api-parameter-property-type.json).
-- order (optional, string): Sorting order ID (from api-parameter-filter.json).
-- filter (optional, string): Additional filters (e.g., ecoFriendly=1).
-- amenities (optional, string): Amenities IDs (separated by "-"). Example: 1-7-6.
+- `keyword` (required, string): Search keyword, e.g., city name (e.g., "london").
+- `limit` (required, integer): Number of results to return (default: 10).
+- `amount` (optional, string): Price range in the format min-max (e.g., "100-200").
+- `startDate` (optional, string, date format: YYYY-MM-DD): Check-in date.
+- `endDate` (optional, string, date format: YYYY-MM-DD): Check-out date.
+- `pt` (optional, string): Property type ID (from api-parameter-property-type.json).
+- `order` (optional, string): Sorting order ID (from api-parameter-filter.json).
+- `filter` (optional, string): Additional filters (e.g., ecoFriendly=1).
+- `amenities` (optional, string): Amenities IDs (separated by "-"). Example: 1-7-6.
 
 ##### Response
 
@@ -82,11 +82,11 @@ Check the availability of a property for a given date range.
 
 ##### Parameters
 
-- checkInDate (required, string, date format: YYYY-MM-DD): The check-in date.
-- checkOutDate (required, string, date format: YYYY-MM-DD): The check-out date.
-- partnerId (required, string): The partner ID (e.g., 33593320).
-- feed (required, integer): The feed ID (e.g., 11).
-- clientCountryCode (required, string): The country code of the client (e.g., "us").
+- `checkInDate` (required, string, date format: YYYY-MM-DD): The check-in date.
+- `checkOutDate` (required, string, date format: YYYY-MM-DD): The check-out date.
+- `partnerId` (required, string): The partner ID (e.g., 33593320).
+- `feed` (required, integer): The feed ID (e.g., 11).
+- `clientCountryCode` (required, string): The country code of the client (e.g., "us").
 
 ##### Response
 
@@ -94,35 +94,6 @@ Check the availability of a property for a given date range.
 
 ---
 
-## Step 3: Fine-Tuning User Experience
-
-### 1. Set Response Style
-
-- Choose if you want responses to be **short, long, or conversational**.
-- Decide if the GPT should **ask follow-up questions**.
-
-### 2. Add API Integrations (Advanced Users)
-
-- If you're a **developer**, you can integrate **external APIs** to make your GPT more powerful.
-
-### 3. Test and Refine
-
-- Use the **chat interface** to test responses.
-- Adjust **instructions** based on interactions.
-
----
-
-## Step 4: Publish and Share
-
-### Save and Publish
-
-- Once satisfied, click **“Publish”**.
-
-### 🔗 Share with Others
-
-- You can share your custom GPT via a **link** or keep it **private** for personal use.
-
----
 
 ## Conclusion
 

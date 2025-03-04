@@ -5,7 +5,7 @@ A structured approach is used to categorize properties, refine search results, a
 
 ---
 
-### **1.1 Interaction Workflow** (`interaction.txt`)  
+### **1.1 Interaction Workflow**  
 - Defines the user interaction process.  
 - Guides the bot to ask about:
   - **Destination:** Where the user wants to go.  
@@ -63,13 +63,13 @@ A structured approach is used to categorize properties, refine search results, a
 
 | Property | Price/Night | Guests | Amenities | Rating |
 |----------|------------|--------|-----------|--------|
-| [Coastal Cabin](https://www.rentbyowner.com/property/coastal-cabin) | $150 | 4 | Beachfront, Hot Tub, Pet-Friendly | 4.9/5 |
-| [City View Loft](https://www.rentbyowner.com/property/city-loft) | $120 | 2 | WiFi, Kitchen, Balcony | 4.7/5 |
-| [Mountain Retreat](https://www.rentbyowner.com/property/mountain-retreat) | $180 | 6 | Fireplace, Hiking Trails, BBQ | 4.8/5 |
+| [Luxurious Hawaiian Villa Oasis](https://www.rentbyowner.com/property/luxurious-hawaiian-villa-oasis/EP-22144528) | $150 | 4 | Beachfront, Hot Tub, Pet-Friendly | 4.9/5 |
+| [Kuapa Isle Gem Unit 419 ](https://www.rentbyowner.com/property/kuapa-isle-gem-unit-419/BC-8370333) | $250 | 2 | WiFi, Kitchen, Balcony | 4.7/5 |
+| [Hale Maunalua](https://www.rentbyowner.com/property/hale-maunalua/BC-8371782) | $180 | 6 | Fireplace, Hiking Trails, BBQ | 4.8/5 |
 
 ---
 
-### **1.6 Footer & Branding Guidelines** (`footer.txt`)  
+### **1.6 Footer & Branding Guidelines** 
 - **Every response must include RentByOwner.com.**  
 - Maps user queries to **affiliate brands**:
   - **Hotels** → [Hotala.com](https://www.hotala.com/)  
@@ -82,7 +82,7 @@ A structured approach is used to categorize properties, refine search results, a
 
 ---
 
-### **1.7 Core Instructions & Final Guidelines** (`instructions.txt`)  
+### **1.7 Core Instructions & Final Guidelines** 
 - **Primary Role:** A travel assistant specializing in RentByOwner.com listings.  
 - **Strict Platform Exclusivity:**
   - Never reference **Airbnb, Booking.com, Expedia**, or others.  

@@ -12,7 +12,7 @@ This travel assistant provides **exclusive** lodging recommendations from **[Ren
 3. **Budget Tips & Price Comparison:**  Optimize your travel expenses and suggest affordable lodging options.  
 
 4. **Real-Time Listings:**  Live property data for the most up-to-date and accurate recommendations.
-<img src="asset/RBO.svg" alt="RentByOwner Logo">
+<img src="asset/RBO.svg" alt="RentByOwner Overflow Diagram">
 
 ---
 
